@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 BambaSDK.podspec
 BambaSDK/Classes/OpenAPIs/APIHelper.swift
 BambaSDK/Classes/OpenAPIs/APIs.swift
