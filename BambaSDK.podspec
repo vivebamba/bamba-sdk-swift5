@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.version = '1.0.0'
   s.source = {:git => 'git@github.com:vivebamba/bamba-sdk-swift5.git', :tag => '1.0.1'}
   s.authors = 'desarrollo@vivebamba.com'
-  s.license = 'Propietary'
+  s.license = 'MIT'
   s.homepage = 'https://github.com/vivebamba/bamba-sdk-swift5'
   s.summary = 'Swift5 SDK for Bamba API'
   s.description = 'This is the Swift5 SDK to consume the Bamba API'
