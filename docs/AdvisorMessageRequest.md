@@ -1,10 +1,10 @@
-# Message
+# AdvisorMessageRequest
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** | Message type | 
-**message** | **String** | The text of the message | 
+**customer** | [**AdvisorUser**](AdvisorUser.md) |  | 
+**message** | [**Message**](Message.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

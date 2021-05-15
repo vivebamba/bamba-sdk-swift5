@@ -1,9 +1,9 @@
-# ModelError
+# ModelErrorResponse
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | **String** | The error description | [optional] 
+**errors** | **[String]** | The error description | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

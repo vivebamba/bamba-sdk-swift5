@@ -25,18 +25,20 @@ All URIs are relative to *https://sandbox.vivebamba.com/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BambaAgentAPI* | [**bambaAgentMessagePost**](docs/BambaAgentAPI.md#bambaagentmessagepost) | **POST** /bamba-agent/message | Bamba agent
-*CustomerAPI* | [**customerCustomerIdServiceGet**](docs/CustomerAPI.md#customercustomeridserviceget) | **GET** /customer/{customerId}/service | Get customer services
+*BambaAdvisorAPI* | [**advisorMessagePost**](docs/BambaAdvisorAPI.md#advisormessagepost) | **POST** /advisor/message | Send messages to the Bamba Advisor
 *StoreAPI* | [**storeOrdersPost**](docs/StoreAPI.md#storeorderspost) | **POST** /store/orders | Place an order
 *StoreAPI* | [**storeProductsGet**](docs/StoreAPI.md#storeproductsget) | **GET** /store/products | Get products
 
 
 ## Documentation For Models
 
+ - [AdvisorMessageRequest](docs/AdvisorMessageRequest.md)
+ - [AdvisorUser](docs/AdvisorUser.md)
  - [Customer](docs/Customer.md)
  - [InlineResponse200](docs/InlineResponse200.md)
+ - [InlineResponse2001](docs/InlineResponse2001.md)
  - [Message](docs/Message.md)
- - [ModelError](docs/ModelError.md)
+ - [ModelErrorResponse](docs/ModelErrorResponse.md)
  - [Order](docs/Order.md)
  - [OrderProducts](docs/OrderProducts.md)
  - [Product](docs/Product.md)
