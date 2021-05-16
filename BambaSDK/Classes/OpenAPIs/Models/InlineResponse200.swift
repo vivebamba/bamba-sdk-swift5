@@ -28,6 +28,7 @@ public struct InlineResponse200: Codable, Hashable {
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }
+
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case id
         case state
@@ -46,7 +47,4 @@ public struct InlineResponse200: Codable, Hashable {
         try container.encodeIfPresent(createdAt, forKey: .createdAt)
         try container.encodeIfPresent(updatedAt, forKey: .updatedAt)
     }
-
-
-
 }

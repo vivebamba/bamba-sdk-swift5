@@ -18,6 +18,7 @@ public struct Order: Codable, Hashable {
         self.customer = customer
         self.products = products
     }
+
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case customer
         case products
@@ -30,7 +31,4 @@ public struct Order: Codable, Hashable {
         try container.encode(customer, forKey: .customer)
         try container.encodeIfPresent(products, forKey: .products)
     }
-
-
-
 }

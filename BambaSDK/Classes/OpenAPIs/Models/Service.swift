@@ -28,6 +28,7 @@ public struct Service: Codable, Hashable {
         self.validFrom = validFrom
         self.validTo = validTo
     }
+
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case policyNumber
         case description
@@ -46,7 +47,4 @@ public struct Service: Codable, Hashable {
         try container.encode(validFrom, forKey: .validFrom)
         try container.encode(validTo, forKey: .validTo)
     }
-
-
-
 }
