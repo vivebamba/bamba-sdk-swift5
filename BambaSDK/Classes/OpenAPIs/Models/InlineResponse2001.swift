@@ -15,7 +15,6 @@ public struct InlineResponse2001: Codable, Hashable {
     public init(success: String? = nil) {
         self.success = success
     }
-
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case success
     }
@@ -26,4 +25,7 @@ public struct InlineResponse2001: Codable, Hashable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(success, forKey: .success)
     }
+
+
+
 }

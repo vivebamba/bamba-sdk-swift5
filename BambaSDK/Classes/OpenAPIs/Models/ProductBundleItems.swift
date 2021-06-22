@@ -16,7 +16,6 @@ public struct ProductBundleItems: Codable, Hashable {
     public init(description: String? = nil) {
         self.description = description
     }
-
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case description
     }
@@ -27,4 +26,7 @@ public struct ProductBundleItems: Codable, Hashable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(description, forKey: .description)
     }
+
+
+
 }

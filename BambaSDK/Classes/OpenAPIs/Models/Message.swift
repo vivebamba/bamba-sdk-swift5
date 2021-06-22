@@ -19,7 +19,6 @@ public struct Message: Codable, Hashable {
         self.type = type
         self.message = message
     }
-
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case type
         case message
@@ -32,4 +31,7 @@ public struct Message: Codable, Hashable {
         try container.encode(type, forKey: .type)
         try container.encode(message, forKey: .message)
     }
+
+
+
 }

@@ -17,7 +17,6 @@ public struct AdvisorMessageRequest: Codable, Hashable {
         self.customer = customer
         self.message = message
     }
-
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case customer
         case message
@@ -30,4 +29,7 @@ public struct AdvisorMessageRequest: Codable, Hashable {
         try container.encode(customer, forKey: .customer)
         try container.encode(message, forKey: .message)
     }
+
+
+
 }

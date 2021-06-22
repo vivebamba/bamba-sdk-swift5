@@ -28,7 +28,6 @@ public struct Product: Codable, Hashable {
         self.type = type
         self.bundleItems = bundleItems
     }
-
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case sku
         case name
@@ -47,4 +46,7 @@ public struct Product: Codable, Hashable {
         try container.encodeIfPresent(type, forKey: .type)
         try container.encodeIfPresent(bundleItems, forKey: .bundleItems)
     }
+
+
+
 }

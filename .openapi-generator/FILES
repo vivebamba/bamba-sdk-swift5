@@ -4,6 +4,7 @@ BambaSDK.podspec
 BambaSDK/Classes/OpenAPIs/APIHelper.swift
 BambaSDK/Classes/OpenAPIs/APIs.swift
 BambaSDK/Classes/OpenAPIs/APIs/BambaAdvisorAPI.swift
+BambaSDK/Classes/OpenAPIs/APIs/CustomerAPI.swift
 BambaSDK/Classes/OpenAPIs/APIs/StoreAPI.swift
 BambaSDK/Classes/OpenAPIs/CodableHelper.swift
 BambaSDK/Classes/OpenAPIs/Configuration.swift
@@ -23,6 +24,7 @@ BambaSDK/Classes/OpenAPIs/Models/OrderProducts.swift
 BambaSDK/Classes/OpenAPIs/Models/Product.swift
 BambaSDK/Classes/OpenAPIs/Models/ProductBundleItems.swift
 BambaSDK/Classes/OpenAPIs/Models/Service.swift
+BambaSDK/Classes/OpenAPIs/Models/Subscription.swift
 BambaSDK/Classes/OpenAPIs/OpenISO8601DateFormatter.swift
 BambaSDK/Classes/OpenAPIs/SynchronizedDictionary.swift
 BambaSDK/Classes/OpenAPIs/URLSessionImplementations.swift
@@ -33,6 +35,7 @@ docs/AdvisorMessageRequest.md
 docs/AdvisorUser.md
 docs/BambaAdvisorAPI.md
 docs/Customer.md
+docs/CustomerAPI.md
 docs/InlineResponse200.md
 docs/InlineResponse2001.md
 docs/Message.md
@@ -43,5 +46,6 @@ docs/Product.md
 docs/ProductBundleItems.md
 docs/Service.md
 docs/StoreAPI.md
+docs/Subscription.md
 git_push.sh
 project.yml

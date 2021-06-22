@@ -10,31 +10,18 @@ import AnyCodable
 
 public struct Service: Codable, Hashable {
 
-    /** The policy number of the customer service, some services do not have it */
+    /** The policy number of the customer service, some services does not have it */
     public var policyNumber: String?
     /** The description of the service */
     public var description: String
-    /** The actual state of the service */
-    public var state: String
-    /** The date and time (ISO 8601 format) of start of validity of the service */
-    public var validFrom: Date
-    /** The date and time (ISO 8601 format) of end of validity of the service */
-    public var validTo: Date
 
-    public init(policyNumber: String? = nil, description: String, state: String, validFrom: Date, validTo: Date) {
+    public init(policyNumber: String? = nil, description: String) {
         self.policyNumber = policyNumber
         self.description = description
-        self.state = state
-        self.validFrom = validFrom
-        self.validTo = validTo
     }
-
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case policyNumber
         case description
-        case state
-        case validFrom
-        case validTo
     }
 
     // Encodable protocol methods
@@ -43,8 +30,8 @@ public struct Service: Codable, Hashable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(policyNumber, forKey: .policyNumber)
         try container.encode(description, forKey: .description)
-        try container.encode(state, forKey: .state)
-        try container.encode(validFrom, forKey: .validFrom)
-        try container.encode(validTo, forKey: .validTo)
     }
+
+
+
 }
