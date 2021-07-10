@@ -13,14 +13,18 @@ public struct Order: Codable, Hashable {
     public var customer: Customer
     /** The collection of SKU from the products selected by the customer */
     public var products: [OrderProducts]?
+    /** Its a unique identifier for the transaction/payment on your app */
+    public var transactionId: String
 
-    public init(customer: Customer, products: [OrderProducts]? = nil) {
+    public init(customer: Customer, products: [OrderProducts]? = nil, transactionId: String) {
         self.customer = customer
         self.products = products
+        self.transactionId = transactionId
     }
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case customer
         case products
+        case transactionId
     }
 
     // Encodable protocol methods
@@ -29,6 +33,7 @@ public struct Order: Codable, Hashable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(customer, forKey: .customer)
         try container.encodeIfPresent(products, forKey: .products)
+        try container.encode(transactionId, forKey: .transactionId)
     }
 
 
