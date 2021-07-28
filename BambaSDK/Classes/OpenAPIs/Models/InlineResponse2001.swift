@@ -10,9 +10,9 @@ import AnyCodable
 
 public struct InlineResponse2001: Codable, Hashable {
 
-    public var success: String?
+    public var success: Bool?
 
-    public init(success: String? = nil) {
+    public init(success: Bool? = nil) {
         self.success = success
     }
     public enum CodingKeys: String, CodingKey, CaseIterable {
