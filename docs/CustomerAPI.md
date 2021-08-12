@@ -5,7 +5,7 @@ All URIs are relative to *https://sandbox.vivebamba.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**customerCustomerIdServicesGet**](CustomerAPI.md#customercustomeridservicesget) | **GET** /customer/{customerId}/services | Get customer services
-[**customerCustomerIdServicesSkuCancelGet**](CustomerAPI.md#customercustomeridservicesskucancelget) | **GET** /customer/{customerId}/services/{sku}/cancel | Cancel customer services
+[**customerCustomerIdServicesSkuCancelPut**](CustomerAPI.md#customercustomeridservicesskucancelput) | **PUT** /customer/{customerId}/services/{sku}/cancel | Cancel customer services
 
 
 # **customerCustomerIdServicesGet**
@@ -58,9 +58,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **customerCustomerIdServicesSkuCancelGet**
+# **customerCustomerIdServicesSkuCancelPut**
 ```swift
-    open class func customerCustomerIdServicesSkuCancelGet(customerId: String, sku: String, completion: @escaping (_ data: Subscription?, _ error: Error?) -> Void)
+    open class func customerCustomerIdServicesSkuCancelPut(customerId: String, sku: String, completion: @escaping (_ data: Subscription?, _ error: Error?) -> Void)
 ```
 
 Cancel customer services
@@ -76,7 +76,7 @@ let customerId = "customerId_example" // String | Bamba customer unique identifi
 let sku = "sku_example" // String | Service sku
 
 // Cancel customer services
-CustomerAPI.customerCustomerIdServicesSkuCancelGet(customerId: customerId, sku: sku) { (response, error) in
+CustomerAPI.customerCustomerIdServicesSkuCancelPut(customerId: customerId, sku: sku) { (response, error) in
     guard error == nil else {
         print(error)
         return

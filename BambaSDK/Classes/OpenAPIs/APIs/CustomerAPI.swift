@@ -65,8 +65,8 @@ open class CustomerAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func customerCustomerIdServicesSkuCancelGet(customerId: String, sku: String, apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: Subscription?, _ error: Error?) -> Void)) {
-        customerCustomerIdServicesSkuCancelGetWithRequestBuilder(customerId: customerId, sku: sku).execute(apiResponseQueue) { result -> Void in
+    open class func customerCustomerIdServicesSkuCancelPut(customerId: String, sku: String, apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: Subscription?, _ error: Error?) -> Void)) {
+        customerCustomerIdServicesSkuCancelPutWithRequestBuilder(customerId: customerId, sku: sku).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -78,7 +78,7 @@ open class CustomerAPI {
 
     /**
      Cancel customer services
-     - GET /customer/{customerId}/services/{sku}/cancel
+     - PUT /customer/{customerId}/services/{sku}/cancel
      - Cancel customer services
      - API Key:
        - type: apiKey x-api-key 
@@ -87,7 +87,7 @@ open class CustomerAPI {
      - parameter sku: (path) Service sku 
      - returns: RequestBuilder<Subscription> 
      */
-    open class func customerCustomerIdServicesSkuCancelGetWithRequestBuilder(customerId: String, sku: String) -> RequestBuilder<Subscription> {
+    open class func customerCustomerIdServicesSkuCancelPutWithRequestBuilder(customerId: String, sku: String) -> RequestBuilder<Subscription> {
         var path = "/customer/{customerId}/services/{sku}/cancel"
         let customerIdPreEscape = "\(APIHelper.mapValueToPathItem(customerId))"
         let customerIdPostEscape = customerIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -108,7 +108,7 @@ open class CustomerAPI {
 
         let requestBuilder: RequestBuilder<Subscription>.Type = BambaSDKAPI.requestBuilderFactory.getBuilder()
 
-        return requestBuilder.init(method: "GET", URLString: (urlComponents?.string ?? URLString), parameters: parameters, headers: headerParameters)
+        return requestBuilder.init(method: "PUT", URLString: (urlComponents?.string ?? URLString), parameters: parameters, headers: headerParameters)
     }
 
 }
