@@ -16,6 +16,7 @@ public struct ModelErrorResponse: Codable, Hashable {
     public init(errors: [String]? = nil) {
         self.errors = errors
     }
+
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case errors
     }
@@ -26,7 +27,4 @@ public struct ModelErrorResponse: Codable, Hashable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(errors, forKey: .errors)
     }
-
-
-
 }

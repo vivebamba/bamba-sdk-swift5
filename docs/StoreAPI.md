@@ -22,7 +22,7 @@ Place an order
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import BambaSDK
 
-let order = Order(customer: Customer(name: "name_example", lastName: "lastName_example", secondLastName: "secondLastName_example", cellphone: "cellphone_example", email: "email_example", birthdate: Date(), gender: "gender_example"), products: [Order_products(sku: "sku_example")], transactionId: "transactionId_example") // Order |  (optional)
+let order = Order(customer: Customer(name: "name_example", lastName: "lastName_example", secondLastName: "secondLastName_example", cellphone: "cellphone_example", email: "email_example", birthdate: Date(), gender: "gender_example"), paymentParams: paymentParams(mediaTypeKey: "mediaTypeKey_example", mediaTypeValue: "mediaTypeValue_example"), products: [Order_products(sku: "sku_example")], transactionId: "transactionId_example") // Order |  (optional)
 
 // Place an order
 StoreAPI.storeOrdersPost(order: order) { (response, error) in

@@ -25,6 +25,7 @@ public struct AdvisorUser: Codable, Hashable {
         self.cellphone = cellphone
         self.uuid = uuid
     }
+
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case name
         case lastName
@@ -41,7 +42,4 @@ public struct AdvisorUser: Codable, Hashable {
         try container.encode(cellphone, forKey: .cellphone)
         try container.encodeIfPresent(uuid, forKey: .uuid)
     }
-
-
-
 }

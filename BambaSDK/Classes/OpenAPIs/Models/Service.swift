@@ -19,6 +19,7 @@ public struct Service: Codable, Hashable {
         self.policyNumber = policyNumber
         self.description = description
     }
+
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case policyNumber
         case description
@@ -31,7 +32,4 @@ public struct Service: Codable, Hashable {
         try container.encodeIfPresent(policyNumber, forKey: .policyNumber)
         try container.encode(description, forKey: .description)
     }
-
-
-
 }

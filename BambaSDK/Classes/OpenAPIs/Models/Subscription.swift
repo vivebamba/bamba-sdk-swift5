@@ -30,6 +30,7 @@ public struct Subscription: Codable, Hashable {
         self.validTo = validTo
         self.relatedServices = relatedServices
     }
+
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case sku
         case name
@@ -50,7 +51,4 @@ public struct Subscription: Codable, Hashable {
         try container.encode(validTo, forKey: .validTo)
         try container.encode(relatedServices, forKey: .relatedServices)
     }
-
-
-
 }

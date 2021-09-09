@@ -31,6 +31,7 @@ public struct Product: Codable, Hashable {
         self.image = image
         self.bundleItems = bundleItems
     }
+
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case sku
         case name
@@ -51,7 +52,4 @@ public struct Product: Codable, Hashable {
         try container.encodeIfPresent(image, forKey: .image)
         try container.encodeIfPresent(bundleItems, forKey: .bundleItems)
     }
-
-
-
 }

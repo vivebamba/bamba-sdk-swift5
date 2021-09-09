@@ -34,6 +34,7 @@ public struct Customer: Codable, Hashable {
         self.birthdate = birthdate
         self.gender = gender
     }
+
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case name
         case lastName
@@ -56,7 +57,4 @@ public struct Customer: Codable, Hashable {
         try container.encode(birthdate, forKey: .birthdate)
         try container.encode(gender, forKey: .gender)
     }
-
-
-
 }

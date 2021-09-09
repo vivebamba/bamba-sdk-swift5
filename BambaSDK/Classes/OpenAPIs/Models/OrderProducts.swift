@@ -15,6 +15,7 @@ public struct OrderProducts: Codable, Hashable {
     public init(sku: String? = nil) {
         self.sku = sku
     }
+
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case sku
     }
@@ -25,7 +26,4 @@ public struct OrderProducts: Codable, Hashable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(sku, forKey: .sku)
     }
-
-
-
 }

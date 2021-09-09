@@ -21,6 +21,7 @@ BambaSDK/Classes/OpenAPIs/Models/Message.swift
 BambaSDK/Classes/OpenAPIs/Models/ModelErrorResponse.swift
 BambaSDK/Classes/OpenAPIs/Models/Order.swift
 BambaSDK/Classes/OpenAPIs/Models/OrderProducts.swift
+BambaSDK/Classes/OpenAPIs/Models/PaymentParams.swift
 BambaSDK/Classes/OpenAPIs/Models/Product.swift
 BambaSDK/Classes/OpenAPIs/Models/ProductBundleItems.swift
 BambaSDK/Classes/OpenAPIs/Models/Service.swift
@@ -42,6 +43,7 @@ docs/Message.md
 docs/ModelErrorResponse.md
 docs/Order.md
 docs/OrderProducts.md
+docs/PaymentParams.md
 docs/Product.md
 docs/ProductBundleItems.md
 docs/Service.md
