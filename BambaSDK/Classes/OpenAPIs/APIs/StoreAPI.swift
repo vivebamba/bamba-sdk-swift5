@@ -15,8 +15,8 @@ open class StoreAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func storeOrdersPost(order: Order? = nil, apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: InlineResponse200?, _ error: Error?) -> Void)) {
-        storeOrdersPostWithRequestBuilder(order: order).execute(apiResponseQueue) { result -> Void in
+    open class func v1StoreOrdersPost(order: Order? = nil, apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: InlineResponse200?, _ error: Error?) -> Void)) {
+        v1StoreOrdersPostWithRequestBuilder(order: order).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -28,7 +28,7 @@ open class StoreAPI {
 
     /**
      Place an order
-     - POST /store/orders
+     - POST /v1/store/orders
      - Place an order
      - API Key:
        - type: apiKey x-api-key 
@@ -36,8 +36,8 @@ open class StoreAPI {
      - parameter order: (body)  (optional)
      - returns: RequestBuilder<InlineResponse200> 
      */
-    open class func storeOrdersPostWithRequestBuilder(order: Order? = nil) -> RequestBuilder<InlineResponse200> {
-        let path = "/store/orders"
+    open class func v1StoreOrdersPostWithRequestBuilder(order: Order? = nil) -> RequestBuilder<InlineResponse200> {
+        let path = "/v1/store/orders"
         let URLString = BambaSDKAPI.basePath + path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: order)
 
@@ -60,8 +60,8 @@ open class StoreAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func storeProductsGet(apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: [Product]?, _ error: Error?) -> Void)) {
-        storeProductsGetWithRequestBuilder().execute(apiResponseQueue) { result -> Void in
+    open class func v1StoreProductsGet(apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: [Product]?, _ error: Error?) -> Void)) {
+        v1StoreProductsGetWithRequestBuilder().execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -73,15 +73,15 @@ open class StoreAPI {
 
     /**
      Get products
-     - GET /store/products
+     - GET /v1/store/products
      - Retrieve all products
      - API Key:
        - type: apiKey x-api-key 
        - name: ApiKeyAuth
      - returns: RequestBuilder<[Product]> 
      */
-    open class func storeProductsGetWithRequestBuilder() -> RequestBuilder<[Product]> {
-        let path = "/store/products"
+    open class func v1StoreProductsGetWithRequestBuilder() -> RequestBuilder<[Product]> {
+        let path = "/v1/store/products"
         let URLString = BambaSDKAPI.basePath + path
         let parameters: [String: Any]? = nil
 

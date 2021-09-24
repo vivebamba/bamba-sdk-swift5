@@ -10,7 +10,7 @@ import AnyCodable
 
 public struct PaymentParams: Codable, Hashable {
 
-    /** Media type key to make the payment, available options CREDIT_CARD, DEBIT_CARD, PHONE_NUMBER, EMAIL, CLABE, CACAO, CUSTOMER_NUMBER, ACCOUNT_NUMBER */
+    /** Media type key to make the payment, available options CARD, PHONE_NUMBER, EMAIL, CLABE, CACAO, CUSTOMER_NUMBER, ACCOUNT_NUMBER */
     public var mediaTypeKey: String
     /** The value for the selected media type, example if mediaTypeKey is EMAIL here it goes customer@domain.com */
     public var mediaTypeValue: String

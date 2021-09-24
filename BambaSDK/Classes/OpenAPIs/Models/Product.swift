@@ -16,29 +16,32 @@ public struct Product: Codable, Hashable {
     public var name: String?
     /** The price of the product */
     public var price: Double?
-    /** Type of the product, it can be *bundle* or *not_bundle* */
-    public var type: String?
     /** Image of the product */
     public var image: String?
-    /** The collection of bundle items related to *bundle* products */
-    public var bundleItems: [ProductBundleItems]?
+    /** Plan benefit summary */
+    public var brief: String?
+    public var description: [AnyOfSectionWhatIncludesSectionWhatNotIncludes]?
+    /** Link to terms and conditions detailed by product */
+    public var terms: String?
 
-    public init(sku: String? = nil, name: String? = nil, price: Double? = nil, type: String? = nil, image: String? = nil, bundleItems: [ProductBundleItems]? = nil) {
+    public init(sku: String? = nil, name: String? = nil, price: Double? = nil, image: String? = nil, brief: String? = nil, description: [AnyOfSectionWhatIncludesSectionWhatNotIncludes]? = nil, terms: String? = nil) {
         self.sku = sku
         self.name = name
         self.price = price
-        self.type = type
         self.image = image
-        self.bundleItems = bundleItems
+        self.brief = brief
+        self.description = description
+        self.terms = terms
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case sku
         case name
         case price
-        case type
         case image
-        case bundleItems
+        case brief
+        case description
+        case terms
     }
 
     // Encodable protocol methods
@@ -48,8 +51,9 @@ public struct Product: Codable, Hashable {
         try container.encodeIfPresent(sku, forKey: .sku)
         try container.encodeIfPresent(name, forKey: .name)
         try container.encodeIfPresent(price, forKey: .price)
-        try container.encodeIfPresent(type, forKey: .type)
         try container.encodeIfPresent(image, forKey: .image)
-        try container.encodeIfPresent(bundleItems, forKey: .bundleItems)
+        try container.encodeIfPresent(brief, forKey: .brief)
+        try container.encodeIfPresent(description, forKey: .description)
+        try container.encodeIfPresent(terms, forKey: .terms)
     }
 }

@@ -15,8 +15,8 @@ open class BambaAdvisorAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func advisorMessagePost(advisorMessageRequest: AdvisorMessageRequest? = nil, apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: InlineResponse2001?, _ error: Error?) -> Void)) {
-        advisorMessagePostWithRequestBuilder(advisorMessageRequest: advisorMessageRequest).execute(apiResponseQueue) { result -> Void in
+    open class func v1AdvisorMessagePost(advisorMessageRequest: AdvisorMessageRequest? = nil, apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: InlineResponse2001?, _ error: Error?) -> Void)) {
+        v1AdvisorMessagePostWithRequestBuilder(advisorMessageRequest: advisorMessageRequest).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -28,7 +28,7 @@ open class BambaAdvisorAPI {
 
     /**
      Send messages to the Bamba Advisor
-     - POST /advisor/message
+     - POST /v1/advisor/message
      - Send mesages to the Bamba Advisor from new or existing customers
      - API Key:
        - type: apiKey x-api-key 
@@ -36,8 +36,8 @@ open class BambaAdvisorAPI {
      - parameter advisorMessageRequest: (body)  (optional)
      - returns: RequestBuilder<InlineResponse2001> 
      */
-    open class func advisorMessagePostWithRequestBuilder(advisorMessageRequest: AdvisorMessageRequest? = nil) -> RequestBuilder<InlineResponse2001> {
-        let path = "/advisor/message"
+    open class func v1AdvisorMessagePostWithRequestBuilder(advisorMessageRequest: AdvisorMessageRequest? = nil) -> RequestBuilder<InlineResponse2001> {
+        let path = "/v1/advisor/message"
         let URLString = BambaSDKAPI.basePath + path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: advisorMessageRequest)
 

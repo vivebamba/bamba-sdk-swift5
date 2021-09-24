@@ -4,12 +4,12 @@ All URIs are relative to *https://sandbox.vivebamba.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**advisorMessagePost**](BambaAdvisorAPI.md#advisormessagepost) | **POST** /advisor/message | Send messages to the Bamba Advisor
+[**v1AdvisorMessagePost**](BambaAdvisorAPI.md#v1advisormessagepost) | **POST** /v1/advisor/message | Send messages to the Bamba Advisor
 
 
-# **advisorMessagePost**
+# **v1AdvisorMessagePost**
 ```swift
-    open class func advisorMessagePost(advisorMessageRequest: AdvisorMessageRequest? = nil, completion: @escaping (_ data: InlineResponse2001?, _ error: Error?) -> Void)
+    open class func v1AdvisorMessagePost(advisorMessageRequest: AdvisorMessageRequest? = nil, completion: @escaping (_ data: InlineResponse2001?, _ error: Error?) -> Void)
 ```
 
 Send messages to the Bamba Advisor
@@ -24,7 +24,7 @@ import BambaSDK
 let advisorMessageRequest = AdvisorMessageRequest(customer: AdvisorUser(name: "name_example", lastName: "lastName_example", cellphone: "cellphone_example", uuid: "uuid_example"), message: Message(type: "type_example", message: "message_example")) // AdvisorMessageRequest |  (optional)
 
 // Send messages to the Bamba Advisor
-BambaAdvisorAPI.advisorMessagePost(advisorMessageRequest: advisorMessageRequest) { (response, error) in
+BambaAdvisorAPI.v1AdvisorMessagePost(advisorMessageRequest: advisorMessageRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
