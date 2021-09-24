@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **price** | **Double** | The price of the product | [optional] 
 **image** | **String** | Image of the product | [optional] 
 **brief** | **String** | Plan benefit summary | [optional] 
-**description** | [AnyOfSectionWhatIncludesSectionWhatNotIncludes] |  | [optional] 
+**description** | [ProductDescription] | Commercial information of the product by sections, the number of elements of each array is dynamic | [optional] 
 **terms** | **String** | Link to terms and conditions detailed by product | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

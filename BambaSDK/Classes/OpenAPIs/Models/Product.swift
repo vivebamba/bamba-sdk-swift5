@@ -20,11 +20,12 @@ public struct Product: Codable, Hashable {
     public var image: String?
     /** Plan benefit summary */
     public var brief: String?
-    public var description: [AnyOfSectionWhatIncludesSectionWhatNotIncludes]?
+    /** Commercial information of the product by sections, the number of elements of each array is dynamic */
+    public var description: [ProductDescription]?
     /** Link to terms and conditions detailed by product */
     public var terms: String?
 
-    public init(sku: String? = nil, name: String? = nil, price: Double? = nil, image: String? = nil, brief: String? = nil, description: [AnyOfSectionWhatIncludesSectionWhatNotIncludes]? = nil, terms: String? = nil) {
+    public init(sku: String? = nil, name: String? = nil, price: Double? = nil, image: String? = nil, brief: String? = nil, description: [ProductDescription]? = nil, terms: String? = nil) {
         self.sku = sku
         self.name = name
         self.price = price
