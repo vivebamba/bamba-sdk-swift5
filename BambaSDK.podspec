@@ -4,8 +4,8 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.11'
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '3.0'
-  s.version = '1.2.9'
-  s.source = {:git => 'https://github.com/vivebamba/bamba-sdk-swift5.git', :tag => '1.2.9'}
+  s.version = '1.3.0'
+  s.source = {:git => 'https://github.com/vivebamba/bamba-sdk-swift5.git', :tag => '1.3.0'}
   s.authors = 'desarrollo@vivebamba.com'
   s.license = {:type => 'MIT', :file => 'LICENSE'}
   s.homepage = 'https://github.com/vivebamba/bamba-sdk-swift5'

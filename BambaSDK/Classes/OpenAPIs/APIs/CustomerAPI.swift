@@ -15,8 +15,8 @@ open class CustomerAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func v1CustomerCustomerIdServicesGet(customerId: Int, apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: Subscription?, _ error: Error?) -> Void)) {
-        v1CustomerCustomerIdServicesGetWithRequestBuilder(customerId: customerId).execute(apiResponseQueue) { result -> Void in
+    open class func customerCustomerIdServicesGet(customerId: Int, apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: Subscription?, _ error: Error?) -> Void)) {
+        customerCustomerIdServicesGetWithRequestBuilder(customerId: customerId).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -28,7 +28,7 @@ open class CustomerAPI {
 
     /**
      Get customer services
-     - GET /v1/customer/{customerId}/services
+     - GET /customer/{customerId}/services
      - Get all customer services
      - API Key:
        - type: apiKey x-api-key 
@@ -36,8 +36,8 @@ open class CustomerAPI {
      - parameter customerId: (path) Bamba customer unique identifier 
      - returns: RequestBuilder<Subscription> 
      */
-    open class func v1CustomerCustomerIdServicesGetWithRequestBuilder(customerId: Int) -> RequestBuilder<Subscription> {
-        var path = "/v1/customer/{customerId}/services"
+    open class func customerCustomerIdServicesGetWithRequestBuilder(customerId: Int) -> RequestBuilder<Subscription> {
+        var path = "/customer/{customerId}/services"
         let customerIdPreEscape = "\(APIHelper.mapValueToPathItem(customerId))"
         let customerIdPostEscape = customerIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{customerId}", with: customerIdPostEscape, options: .literal, range: nil)
@@ -65,8 +65,8 @@ open class CustomerAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func v1CustomerCustomerIdServicesSkuCancelPut(customerId: String, sku: String, apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: Subscription?, _ error: Error?) -> Void)) {
-        v1CustomerCustomerIdServicesSkuCancelPutWithRequestBuilder(customerId: customerId, sku: sku).execute(apiResponseQueue) { result -> Void in
+    open class func customerCustomerIdServicesSkuCancelPut(customerId: String, sku: String, apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: Subscription?, _ error: Error?) -> Void)) {
+        customerCustomerIdServicesSkuCancelPutWithRequestBuilder(customerId: customerId, sku: sku).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -78,7 +78,7 @@ open class CustomerAPI {
 
     /**
      Cancel customer services
-     - PUT /v1/customer/{customerId}/services/{sku}/cancel
+     - PUT /customer/{customerId}/services/{sku}/cancel
      - Cancel customer services
      - API Key:
        - type: apiKey x-api-key 
@@ -87,8 +87,8 @@ open class CustomerAPI {
      - parameter sku: (path) Service sku 
      - returns: RequestBuilder<Subscription> 
      */
-    open class func v1CustomerCustomerIdServicesSkuCancelPutWithRequestBuilder(customerId: String, sku: String) -> RequestBuilder<Subscription> {
-        var path = "/v1/customer/{customerId}/services/{sku}/cancel"
+    open class func customerCustomerIdServicesSkuCancelPutWithRequestBuilder(customerId: String, sku: String) -> RequestBuilder<Subscription> {
+        var path = "/customer/{customerId}/services/{sku}/cancel"
         let customerIdPreEscape = "\(APIHelper.mapValueToPathItem(customerId))"
         let customerIdPostEscape = customerIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{customerId}", with: customerIdPostEscape, options: .literal, range: nil)

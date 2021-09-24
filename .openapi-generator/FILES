@@ -6,7 +6,6 @@ BambaSDK/Classes/OpenAPIs/APIs.swift
 BambaSDK/Classes/OpenAPIs/APIs/BambaAdvisorAPI.swift
 BambaSDK/Classes/OpenAPIs/APIs/CustomerAPI.swift
 BambaSDK/Classes/OpenAPIs/APIs/StoreAPI.swift
-BambaSDK/Classes/OpenAPIs/APIs/V1API.swift
 BambaSDK/Classes/OpenAPIs/CodableHelper.swift
 BambaSDK/Classes/OpenAPIs/Configuration.swift
 BambaSDK/Classes/OpenAPIs/Extensions.swift
@@ -58,6 +57,5 @@ docs/SectionWhatNotIncludes.md
 docs/Service.md
 docs/StoreAPI.md
 docs/Subscription.md
-docs/V1API.md
 git_push.sh
 project.yml

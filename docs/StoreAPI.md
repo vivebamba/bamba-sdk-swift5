@@ -4,13 +4,13 @@ All URIs are relative to *https://sandbox.vivebamba.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1StoreOrdersPost**](StoreAPI.md#v1storeorderspost) | **POST** /v1/store/orders | Place an order
-[**v1StoreProductsGet**](StoreAPI.md#v1storeproductsget) | **GET** /v1/store/products | Get products
+[**storeOrdersPost**](StoreAPI.md#storeorderspost) | **POST** /store/orders | Place an order
+[**storeProductsGet**](StoreAPI.md#storeproductsget) | **GET** /store/products | Get products
 
 
-# **v1StoreOrdersPost**
+# **storeOrdersPost**
 ```swift
-    open class func v1StoreOrdersPost(order: Order? = nil, completion: @escaping (_ data: InlineResponse200?, _ error: Error?) -> Void)
+    open class func storeOrdersPost(order: Order? = nil, completion: @escaping (_ data: InlineResponse200?, _ error: Error?) -> Void)
 ```
 
 Place an order
@@ -25,7 +25,7 @@ import BambaSDK
 let order = Order(customer: Customer(name: "name_example", lastName: "lastName_example", secondLastName: "secondLastName_example", cellphone: "cellphone_example", email: "email_example", birthdate: Date(), gender: "gender_example"), paymentParams: paymentParams(mediaTypeKey: "mediaTypeKey_example", mediaTypeValue: "mediaTypeValue_example"), products: [Order_products(sku: "sku_example")], transactionId: "transactionId_example") // Order |  (optional)
 
 // Place an order
-StoreAPI.v1StoreOrdersPost(order: order) { (response, error) in
+StoreAPI.storeOrdersPost(order: order) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -58,9 +58,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v1StoreProductsGet**
+# **storeProductsGet**
 ```swift
-    open class func v1StoreProductsGet(completion: @escaping (_ data: [Product]?, _ error: Error?) -> Void)
+    open class func storeProductsGet(completion: @escaping (_ data: [Product]?, _ error: Error?) -> Void)
 ```
 
 Get products
@@ -74,7 +74,7 @@ import BambaSDK
 
 
 // Get products
-StoreAPI.v1StoreProductsGet() { (response, error) in
+StoreAPI.storeProductsGet() { (response, error) in
     guard error == nil else {
         print(error)
         return
