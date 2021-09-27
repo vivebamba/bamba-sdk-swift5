@@ -12,9 +12,9 @@ public struct ProductDescription: Codable, Hashable {
 
     /** Section title */
     public var section: String?
-    public var details: ProductDetails?
+    public var details: [ProductDetails]?
 
-    public init(section: String? = nil, details: ProductDetails? = nil) {
+    public init(section: String? = nil, details: [ProductDetails]? = nil) {
         self.section = section
         self.details = details
     }
