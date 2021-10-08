@@ -15,7 +15,7 @@ open class CustomerAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func customerCustomerIdServicesGet(customerId: Int, apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: Subscription?, _ error: Error?) -> Void)) {
+    open class func customerCustomerIdServicesGet(customerId: UUID, apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: [AnyCodable]?, _ error: Error?) -> Void)) {
         customerCustomerIdServicesGetWithRequestBuilder(customerId: customerId).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
@@ -34,9 +34,9 @@ open class CustomerAPI {
        - type: apiKey x-api-key 
        - name: ApiKeyAuth
      - parameter customerId: (path) Bamba customer unique identifier 
-     - returns: RequestBuilder<Subscription> 
+     - returns: RequestBuilder<[AnyCodable]> 
      */
-    open class func customerCustomerIdServicesGetWithRequestBuilder(customerId: Int) -> RequestBuilder<Subscription> {
+    open class func customerCustomerIdServicesGetWithRequestBuilder(customerId: UUID) -> RequestBuilder<[AnyCodable]> {
         var path = "/customer/{customerId}/services"
         let customerIdPreEscape = "\(APIHelper.mapValueToPathItem(customerId))"
         let customerIdPostEscape = customerIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -52,7 +52,7 @@ open class CustomerAPI {
 
         let headerParameters = APIHelper.rejectNilHeaders(nillableHeaders)
 
-        let requestBuilder: RequestBuilder<Subscription>.Type = BambaSDKAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<[AnyCodable]>.Type = BambaSDKAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (urlComponents?.string ?? URLString), parameters: parameters, headers: headerParameters)
     }
@@ -61,12 +61,12 @@ open class CustomerAPI {
      Cancel customer services
      
      - parameter customerId: (path) Bamba customer unique identifier 
-     - parameter sku: (path) Service sku 
+     - parameter serviceId: (path) Service Id 
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func customerCustomerIdServicesSkuCancelPut(customerId: String, sku: String, apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: Subscription?, _ error: Error?) -> Void)) {
-        customerCustomerIdServicesSkuCancelPutWithRequestBuilder(customerId: customerId, sku: sku).execute(apiResponseQueue) { result -> Void in
+    open class func customerCustomerIdServicesServiceIdCancelPut(customerId: UUID, serviceId: UUID, apiResponseQueue: DispatchQueue = BambaSDKAPI.apiResponseQueue, completion: @escaping ((_ data: CancellationResponse?, _ error: Error?) -> Void)) {
+        customerCustomerIdServicesServiceIdCancelPutWithRequestBuilder(customerId: customerId, serviceId: serviceId).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -78,23 +78,23 @@ open class CustomerAPI {
 
     /**
      Cancel customer services
-     - PUT /customer/{customerId}/services/{sku}/cancel
+     - PUT /customer/{customerId}/services/{serviceId}/cancel
      - Cancel customer services
      - API Key:
        - type: apiKey x-api-key 
        - name: ApiKeyAuth
      - parameter customerId: (path) Bamba customer unique identifier 
-     - parameter sku: (path) Service sku 
-     - returns: RequestBuilder<Subscription> 
+     - parameter serviceId: (path) Service Id 
+     - returns: RequestBuilder<CancellationResponse> 
      */
-    open class func customerCustomerIdServicesSkuCancelPutWithRequestBuilder(customerId: String, sku: String) -> RequestBuilder<Subscription> {
-        var path = "/customer/{customerId}/services/{sku}/cancel"
+    open class func customerCustomerIdServicesServiceIdCancelPutWithRequestBuilder(customerId: UUID, serviceId: UUID) -> RequestBuilder<CancellationResponse> {
+        var path = "/customer/{customerId}/services/{serviceId}/cancel"
         let customerIdPreEscape = "\(APIHelper.mapValueToPathItem(customerId))"
         let customerIdPostEscape = customerIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{customerId}", with: customerIdPostEscape, options: .literal, range: nil)
-        let skuPreEscape = "\(APIHelper.mapValueToPathItem(sku))"
-        let skuPostEscape = skuPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sku}", with: skuPostEscape, options: .literal, range: nil)
+        let serviceIdPreEscape = "\(APIHelper.mapValueToPathItem(serviceId))"
+        let serviceIdPostEscape = serviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{serviceId}", with: serviceIdPostEscape, options: .literal, range: nil)
         let URLString = BambaSDKAPI.basePath + path
         let parameters: [String: Any]? = nil
 
@@ -106,7 +106,7 @@ open class CustomerAPI {
 
         let headerParameters = APIHelper.rejectNilHeaders(nillableHeaders)
 
-        let requestBuilder: RequestBuilder<Subscription>.Type = BambaSDKAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CancellationResponse>.Type = BambaSDKAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "PUT", URLString: (urlComponents?.string ?? URLString), parameters: parameters, headers: headerParameters)
     }

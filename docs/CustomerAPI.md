@@ -5,12 +5,12 @@ All URIs are relative to *https://sandbox.vivebamba.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**customerCustomerIdServicesGet**](CustomerAPI.md#customercustomeridservicesget) | **GET** /customer/{customerId}/services | Get customer services
-[**customerCustomerIdServicesSkuCancelPut**](CustomerAPI.md#customercustomeridservicesskucancelput) | **PUT** /customer/{customerId}/services/{sku}/cancel | Cancel customer services
+[**customerCustomerIdServicesServiceIdCancelPut**](CustomerAPI.md#customercustomeridservicesserviceidcancelput) | **PUT** /customer/{customerId}/services/{serviceId}/cancel | Cancel customer services
 
 
 # **customerCustomerIdServicesGet**
 ```swift
-    open class func customerCustomerIdServicesGet(customerId: Int, completion: @escaping (_ data: Subscription?, _ error: Error?) -> Void)
+    open class func customerCustomerIdServicesGet(customerId: UUID, completion: @escaping (_ data: [AnyCodable]?, _ error: Error?) -> Void)
 ```
 
 Get customer services
@@ -22,7 +22,7 @@ Get all customer services
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import BambaSDK
 
-let customerId = 987 // Int | Bamba customer unique identifier
+let customerId = 987 // UUID | Bamba customer unique identifier
 
 // Get customer services
 CustomerAPI.customerCustomerIdServicesGet(customerId: customerId) { (response, error) in
@@ -41,11 +41,11 @@ CustomerAPI.customerCustomerIdServicesGet(customerId: customerId) { (response, e
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Int** | Bamba customer unique identifier | 
+ **customerId** | [**UUID**](.md) | Bamba customer unique identifier | 
 
 ### Return type
 
-[**Subscription**](Subscription.md)
+[**[AnyCodable]**](AnyCodable.md)
 
 ### Authorization
 
@@ -58,9 +58,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **customerCustomerIdServicesSkuCancelPut**
+# **customerCustomerIdServicesServiceIdCancelPut**
 ```swift
-    open class func customerCustomerIdServicesSkuCancelPut(customerId: String, sku: String, completion: @escaping (_ data: Subscription?, _ error: Error?) -> Void)
+    open class func customerCustomerIdServicesServiceIdCancelPut(customerId: UUID, serviceId: UUID, completion: @escaping (_ data: CancellationResponse?, _ error: Error?) -> Void)
 ```
 
 Cancel customer services
@@ -72,11 +72,11 @@ Cancel customer services
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import BambaSDK
 
-let customerId = "customerId_example" // String | Bamba customer unique identifier
-let sku = "sku_example" // String | Service sku
+let customerId = 987 // UUID | Bamba customer unique identifier
+let serviceId = 987 // UUID | Service Id
 
 // Cancel customer services
-CustomerAPI.customerCustomerIdServicesSkuCancelPut(customerId: customerId, sku: sku) { (response, error) in
+CustomerAPI.customerCustomerIdServicesServiceIdCancelPut(customerId: customerId, serviceId: serviceId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -92,12 +92,12 @@ CustomerAPI.customerCustomerIdServicesSkuCancelPut(customerId: customerId, sku: 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **String** | Bamba customer unique identifier | 
- **sku** | **String** | Service sku | 
+ **customerId** | [**UUID**](.md) | Bamba customer unique identifier | 
+ **serviceId** | [**UUID**](.md) | Service Id | 
 
 ### Return type
 
-[**Subscription**](Subscription.md)
+[**CancellationResponse**](CancellationResponse.md)
 
 ### Authorization
 

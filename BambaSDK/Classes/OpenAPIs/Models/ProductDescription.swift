@@ -12,16 +12,16 @@ public struct ProductDescription: Codable, Hashable {
 
     /** Section title */
     public var section: String?
-    public var details: [ProductDetails]?
+    public var body: [String]?
 
-    public init(section: String? = nil, details: [ProductDetails]? = nil) {
+    public init(section: String? = nil, body: [String]? = nil) {
         self.section = section
-        self.details = details
+        self.body = body
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case section
-        case details
+        case body
     }
 
     // Encodable protocol methods
@@ -29,6 +29,6 @@ public struct ProductDescription: Codable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(section, forKey: .section)
-        try container.encodeIfPresent(details, forKey: .details)
+        try container.encodeIfPresent(body, forKey: .body)
     }
 }
