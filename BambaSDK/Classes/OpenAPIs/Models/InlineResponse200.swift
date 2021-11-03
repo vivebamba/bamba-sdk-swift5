@@ -11,17 +11,17 @@ import AnyCodable
 public struct InlineResponse200: Codable, Hashable {
 
     /** The unique identifier for the order */
-    public var id: UUID?
+    public var id: String?
     /** The state of the order */
     public var state: String?
     /** The unique identifier for the customer on Bamba®, you MUST relate this with user/customer on your platform */
-    public var customerId: UUID?
+    public var customerId: String?
     /** The date and time (ISO 8601 format) when the order was created */
     public var createdAt: Date?
     /** The date and time (ISO 8601 format) when the order was last modified. */
     public var updatedAt: Date?
 
-    public init(id: UUID? = nil, state: String? = nil, customerId: UUID? = nil, createdAt: Date? = nil, updatedAt: Date? = nil) {
+    public init(id: String? = nil, state: String? = nil, customerId: String? = nil, createdAt: Date? = nil, updatedAt: Date? = nil) {
         self.id = id
         self.state = state
         self.customerId = customerId

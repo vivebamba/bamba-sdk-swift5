@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 # **customerCustomerIdServicesGet**
 ```swift
-    open class func customerCustomerIdServicesGet(customerId: UUID, completion: @escaping (_ data: [AnyCodable]?, _ error: Error?) -> Void)
+    open class func customerCustomerIdServicesGet(customerId: String, completion: @escaping (_ data: [AnyCodable]?, _ error: Error?) -> Void)
 ```
 
 Get customer services
@@ -22,7 +22,7 @@ Get all customer services
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import BambaSDK
 
-let customerId = 987 // UUID | Bamba customer unique identifier
+let customerId = "customerId_example" // String | Bamba customer unique identifier
 
 // Get customer services
 CustomerAPI.customerCustomerIdServicesGet(customerId: customerId) { (response, error) in
@@ -41,7 +41,7 @@ CustomerAPI.customerCustomerIdServicesGet(customerId: customerId) { (response, e
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | [**UUID**](.md) | Bamba customer unique identifier | 
+ **customerId** | **String** | Bamba customer unique identifier | 
 
 ### Return type
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 # **customerCustomerIdServicesServiceIdCancelPut**
 ```swift
-    open class func customerCustomerIdServicesServiceIdCancelPut(customerId: UUID, serviceId: UUID, completion: @escaping (_ data: CancellationResponse?, _ error: Error?) -> Void)
+    open class func customerCustomerIdServicesServiceIdCancelPut(customerId: String, serviceId: String, completion: @escaping (_ data: CancellationResponse?, _ error: Error?) -> Void)
 ```
 
 Cancel customer services
@@ -72,8 +72,8 @@ Cancel customer services
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import BambaSDK
 
-let customerId = 987 // UUID | Bamba customer unique identifier
-let serviceId = 987 // UUID | Service Id
+let customerId = "customerId_example" // String | The customer UUID assigned by Bamba
+let serviceId = "serviceId_example" // String | The service UUID to cancel assigned by Bamba
 
 // Cancel customer services
 CustomerAPI.customerCustomerIdServicesServiceIdCancelPut(customerId: customerId, serviceId: serviceId) { (response, error) in
@@ -92,8 +92,8 @@ CustomerAPI.customerCustomerIdServicesServiceIdCancelPut(customerId: customerId,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | [**UUID**](.md) | Bamba customer unique identifier | 
- **serviceId** | [**UUID**](.md) | Service Id | 
+ **customerId** | **String** | The customer UUID assigned by Bamba | 
+ **serviceId** | **String** | The service UUID to cancel assigned by Bamba | 
 
 ### Return type
 

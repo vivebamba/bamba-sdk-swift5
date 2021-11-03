@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **UUID** |  | [optional] 
+**id** | **String** | UUID of the canceled service | [optional] 
 **name** | **String** | Benefit | [optional] 
 **brief** | **String** | Plan benefit summary | [optional] 
 **state** | **String** | Cancellation status | [optional] 

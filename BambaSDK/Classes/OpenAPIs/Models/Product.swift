@@ -14,6 +14,8 @@ public struct Product: Codable, Hashable {
     public var sku: String?
     /** The name of the product */
     public var name: String?
+    /** Product slug */
+    public var slug: String?
     /** The price of the product */
     public var price: Double?
     /** Image of the product */
@@ -25,9 +27,10 @@ public struct Product: Codable, Hashable {
     /** Link to terms and conditions detailed by product */
     public var terms: String?
 
-    public init(sku: String? = nil, name: String? = nil, price: Double? = nil, image: String? = nil, brief: String? = nil, description: [ProductDescription]? = nil, terms: String? = nil) {
+    public init(sku: String? = nil, name: String? = nil, slug: String? = nil, price: Double? = nil, image: String? = nil, brief: String? = nil, description: [ProductDescription]? = nil, terms: String? = nil) {
         self.sku = sku
         self.name = name
+        self.slug = slug
         self.price = price
         self.image = image
         self.brief = brief
@@ -38,6 +41,7 @@ public struct Product: Codable, Hashable {
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case sku
         case name
+        case slug
         case price
         case image
         case brief
@@ -51,6 +55,7 @@ public struct Product: Codable, Hashable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(sku, forKey: .sku)
         try container.encodeIfPresent(name, forKey: .name)
+        try container.encodeIfPresent(slug, forKey: .slug)
         try container.encodeIfPresent(price, forKey: .price)
         try container.encodeIfPresent(image, forKey: .image)
         try container.encodeIfPresent(brief, forKey: .brief)

@@ -10,7 +10,8 @@ import AnyCodable
 
 public struct CancellationResponse: Codable, Hashable {
 
-    public var id: UUID?
+    /** UUID of the canceled service */
+    public var id: String?
     /** Benefit */
     public var name: String?
     /** Plan benefit summary */
@@ -20,7 +21,7 @@ public struct CancellationResponse: Codable, Hashable {
     /** The date and time (ISO 8601 format) of cancellation */
     public var canceledAt: Date?
 
-    public init(id: UUID? = nil, name: String? = nil, brief: String? = nil, state: String? = nil, canceledAt: Date? = nil) {
+    public init(id: String? = nil, name: String? = nil, brief: String? = nil, state: String? = nil, canceledAt: Date? = nil) {
         self.id = id
         self.name = name
         self.brief = brief
